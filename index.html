@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dale-speak generator</title>
+</head>
+<body>
+
+<h1>Dale-speak generator</h1>
+<span>Amount of Dale-phases:</span>
+<input type="number">
+<button onclick="generate();">Generate!</button>
+<p>Output:</p>
+
+<script>
+var lookup = {1: "Eat this, it's definitely not poisonous… but it will still kill you.", 2: "Eat this, it's definitely won't kill you… Well at least not directly.", 3: "Attila the hun was a mercenary and destroyed to roman empire.", 4: "Eeeeeeeeeeeeeeeeeeee!!!", 5: "Stop saying Allita!!!"}
+
+function generate() {
+document.querySelector("p").innerText = "";
+for (let i = 0; i < document.querySelector("input").value; i++) {
+document.querySelector("p").innerText += lookup[Math.ceil(Math.random()*5)];
+}
+}
+</script>
+
+</body>
+</html>
